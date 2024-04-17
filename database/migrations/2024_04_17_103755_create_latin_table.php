@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('latin', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("latin");
+            $table->string("german");
+            $table->integer("lesson");
         });
     }
 

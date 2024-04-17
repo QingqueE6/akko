@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LatinController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,3 +26,5 @@ Route::get('/games', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/latin', [LatinController::class, "display"]);
