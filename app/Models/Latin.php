@@ -11,6 +11,7 @@ class Latin extends Model
     protected $table = 'latin';
     protected $fillable = [
         'latin',
+        'additional',
         'german',
         'lesson',
     ];
