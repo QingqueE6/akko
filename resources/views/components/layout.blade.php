@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/cd3fa29262.js" crossorigin="anonymous"></script>
+    @vite('resources/css/app.css')
     <link rel="icon" type="image/x-icon" href="{{ asset("favicon.svg") }}">
     <title>Akko</title>
 </head>
@@ -28,12 +28,13 @@
                 </div>
                 <div class="hidden md:block">
                   <div class="ml-10 flex items-baseline space-x-4">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    {{-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --}}
+                    {{-- Adding a prefix to a property (:active in this case) makes the data after the = dynamic, it can be a boolean now for example --}}
                     <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                     <x-nav-link href="/movies" :active="request()->is('movies')">Movies</x-nav-link>
-                    <x-nav-link href="/anime" :active="request()->is('anime')">Anime</x-nav-link>
+                    <x-nav-link href="/anime" :active="request()->is('anime')">Anime</x-nav-link> 
                     <x-nav-link href="/manga" :active="request()->is('manga')">Manga</x-nav-link>
-                    <x-nav-link href="/games" :active="request()->is('games')">Games</x-nav-link>
+                    <x-nav-link href="/games"{{--type="button"--}}  :active="request()->is('games')">Games</x-nav-link>
                     <x-nav-link href="/latin" :active="request()->is('latin')">Latin</x-nav-link>
                   </div>
                 </div>
@@ -129,7 +130,7 @@
           </div>
         </header>
         <main>
-          <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+          <div class="mx-auto py-6 sm:px-6 lg:px-8">
             {{$slot}}
           </div>
         </main>
