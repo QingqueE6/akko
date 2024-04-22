@@ -10,6 +10,6 @@ class LatinController extends Controller
 {
     public function display(){
         $data = Latin::all();
-        return view("latin", ["data" => $data]);
+        return view("latin",    ["data" => $data ]);
     }
 }
