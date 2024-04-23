@@ -13,7 +13,6 @@
     {{-- <nav>
         <a href="/">Home</a>
         <a href="/anime">Anime</a>
-        <a href="/manga">Manga</a>
         <a href="/games">Games</a>
         <a href="/movies">Movies</a>
         <a href="/about">About</a>
@@ -31,9 +30,8 @@
                     {{-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --}}
                     {{-- Adding a prefix to a property (:active in this case) makes the data after the = dynamic, it can be a boolean now for example --}}
                     <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                    <x-nav-link href="/movies" :active="request()->is('movies')">Movies</x-nav-link>
-                    <x-nav-link href="/anime" :active="request()->is('anime')">Anime</x-nav-link> 
-                    <x-nav-link href="/manga" :active="request()->is('manga')">Manga</x-nav-link>
+                    <x-nav-link href="/movies" :active="request()->is('movies')">Movies & Series</x-nav-link>
+                    <x-nav-link href="/anime" :active="request()->is('anime')">Anime & Manga</x-nav-link> 
                     <x-nav-link href="/games"{{--type="button"--}}  :active="request()->is('games')">Games</x-nav-link>
                     <x-nav-link href="/latin" :active="request()->is('latin')">Latin</x-nav-link>
                   </div>
@@ -55,8 +53,7 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
               <a href="/movies" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Movies</a>
-              <a href="/anime" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Anime</a>
-              <a href="/manga" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Manga</a>
+              <a href="/anime" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Anime & Manga</a>
               <a href="/games" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Games</a>
               <a href="/latin" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Latin</a>
             </div>
