@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimeController;
+use App\Http\Controllers\GamesController;
 use App\Http\Controllers\LatinController;
 use App\Http\Controllers\MoviesController;
 
@@ -20,3 +21,4 @@ Route::get('/about', function () {
 Route::get('/latin', [LatinController::class, "display"]);
 Route::get('/movies', [MoviesController::class, "display"]);
 Route::get('/anime', [AnimeController::class, "display"]);
+Route::get('/games', [GamesController::class, "display"]);
