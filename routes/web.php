@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LatinController;
+use App\Http\Controllers\MoviesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,3 +29,4 @@ Route::get('/about', function () {
 });
 
 Route::get('/latin', [LatinController::class, "display"]);
+Route::get('/movies', [MoviesController::class, "display"]);

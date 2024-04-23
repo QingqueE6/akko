@@ -25,7 +25,7 @@
     @include("styling/divider")
 
     <h1>MiR 2:</h1><br>
-    <div class="grid grid-cols-6">
+    <div class="grid grid-cols-5">
     @foreach ($data as $item)
 
     @if ($item->lesson == 2)
@@ -56,7 +56,7 @@
 
     @endforeach
     </div>
-    @include("styling/divider") --}}
+    @include("styling/divider")
 
     <h1>MiR 4:</h1><br>
     <div class="grid grid-cols-5">

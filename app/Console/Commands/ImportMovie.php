@@ -2,25 +2,25 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Latin;
+use App\Models\Movie;
 use Illuminate\Console\Command;
 use Spatie\SimpleExcel\SimpleExcelReader;
 
-class ImportLatin extends Command
+class ImportMovie extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'app:import-latin {pathToSheet}';
+    protected $signature = 'app:import-movie {pathToSheet}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Imports my latin vocab with spatie-simple-excel';
+    protected $description = 'Imports my movies/series with spatie-simple-excel';
 
     /**
      * Execute the console command.
@@ -28,20 +28,20 @@ class ImportLatin extends Command
     public function handle()
     {
         // deletes all the existing content first so no duplication happens
-        Latin::whereNotNull('id')->delete();  
+        Movie::whereNotNull('id')->delete();  
 
         $excelReader = SimpleExcelReader::create($this->argument("pathToSheet"));
         // The amount of total sheets isnt dynamic so you have to type it in manually (see the number thats being compared to $currentSheet)
-        for ($currentSheet=1; $currentSheet <= 4; $currentSheet++) { 
+        for ($currentSheet=1; $currentSheet <= 1; $currentSheet++) { 
 
             $rows = $excelReader->fromSheet($currentSheet)->getRows();
 
             foreach ($rows as $row){
-                Latin::create([
-                "latin" => $row["Latein"],
-                "additional" => $row["additional"],
-                "german" => $row["Deutsch"],
-                "lesson" => $row["Lektion"],]);
+
+                Movie::create([
+                "title" => $row["Title"],
+                "year_watched" => $row["year_watched"],
+                "form" => $row["form"],]);
             }
         }
     }
