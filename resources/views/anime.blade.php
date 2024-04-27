@@ -9,7 +9,7 @@
         @foreach ($animes as $anime)
     
         @if ($anime->form == "Anime")
-            <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
+            <div class="m-1 pl-1 bg-gradient-to-r from-cyan-400 via-cyan-200 to-cyan-50 hover:opacity-50 shadow-md">
                 <ul class="font-bold custom-text-shadow">{{$anime->title}}</ul>
                 <ul class="custom-text-shadow">Watched in: {{$anime->year_watched}}</ul>
             </div>

@@ -8,7 +8,7 @@
       @foreach ($games as $game)
   
       @if ($game->status == "currently playing")
-          <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
+          <div class="m-1 pl-1 bg-gradient-to-r from-fuchsia-400  to-fuchsia-200 hover:opacity-50 shadow-md">
               <ul class="font-bold custom-text-shadow">{{$game->title}}</ul>
               <ul class="custom-text-shadow">{{$game->year_played}}</ul>
           </div>
@@ -24,7 +24,7 @@
   @foreach ($games as $game)
 
   @if ($game->status == "done" || $game->status == "completed")
-      <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
+      <div class="m-1 pl-1 bg-gradient-to-r from-fuchsia-400  to-fuchsia-200 hover:opacity-50 shadow-md">
           <ul class="font-bold custom-text-shadow">{{$game->title}}</ul>
           <ul class="custom-text-shadow">played in: {{$game->year_played}}</ul>
       </div>
@@ -40,7 +40,7 @@
   @foreach ($games as $game)
 
   @if ($game->status == "Backlog")
-      <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
+      <div class="m-1 pl-1 bg-gradient-to-r from-fuchsia-400  to-fuchsia-200 hover:opacity-50 shadow-md">
           <ul class="font-bold custom-text-shadow">{{$game->title}}</ul>
       </div>
   @endif
