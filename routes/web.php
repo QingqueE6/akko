@@ -16,6 +16,10 @@ Route::get('/archive', function () {
     return view('archive');
 });
 
+Route::get('/calories', function () {
+    return view('calories');
+});
+
 Route::get('/latin', [LatinController::class, "display"]);
 Route::get('/archive/movies', [MoviesController::class, "displayMovies"]);
 Route::get('/archive/series', [MoviesController::class, "displaySeries"]);
