@@ -10,10 +10,12 @@
     @foreach ($series as $serie)
 
     @if ($serie->form == "Series")
+    <a href="/archive/series/{{$serie->id}}">
         <div class="m-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
             <ul class="font-bold custom-text-shadow">{{$serie->title}}</ul>
             <ul class="custom-text-shadow">Watched in: {{$serie->year_watched}}</ul>
         </div>
+    </a>
     @endif
     @endforeach
     </div> 

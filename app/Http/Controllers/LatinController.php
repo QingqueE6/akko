@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class LatinController extends Controller
 {
-    public function display(){
+    public function displayAll(){
         $data = Latin::all();
-        return view("latin",    ["data" => $data ]);
+        return view("latin/latin",    ["data" => $data ]);
     }
 }

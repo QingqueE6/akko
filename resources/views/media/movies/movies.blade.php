@@ -11,14 +11,14 @@
         @foreach ($movies as $movie)
     
         @if ($movie->form == "Movie")
+        <a href="/archive/movies/{{$movie->id}}">
+
             <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
                 <ul class="font-bold custom-text-shadow">{{$movie->title}}</ul>
                 <ul class="custom-text-shadow">Watched in: {{$movie->year_watched}}</ul>
             </div>
+        </a>
         @endif
         @endforeach
         </div> 
-    
-    @include("styling/divider")
-
 </x-layout>

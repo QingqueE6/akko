@@ -7,13 +7,21 @@ use Illuminate\Http\Request;
 
 class MoviesController extends Controller
 {
-    public function displayMovies(){
+    public function displayAllMovies(){
         $movies = Movie::all();
-        return view("movies",    ["movies" => $movies ]);
+        return view("media/movies/movies",    ["movies" => $movies]);
     }
 
-    public function displaySeries(){
+    public function displaySingleMovie(Movie $movie){
+        return view("media/movies/single-movie",    ["movie" => $movie]);
+    }
+
+    public function displayAllSeries(){
         $series = Movie::all();
-        return view("series",    ["series" => $series ]);
+        return view("media/series/series",    ["series" => $series]);
+    }
+
+    public function displaySingleSerie(Movie $serie){
+        return view("media/series/single-serie",    ["serie" => $serie]);
     }
 }

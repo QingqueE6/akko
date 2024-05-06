@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class AnimeController extends Controller
 {
-    public function display(){
+    public function displayAll(){
         $animes = Anime::all();
-        return view("anime",    ["animes" => $animes ]);
+        return view("media/anime/anime",    ["animes" => $animes ]);
+    }
+
+    public function displaySingleAnime(Anime $anime){
+        return view("media/anime/single-anime",    ["anime" => $anime]);
     }
 }
