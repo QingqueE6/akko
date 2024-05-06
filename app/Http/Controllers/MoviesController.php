@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class MoviesController extends Controller
 {
     public function displayAllMovies(){
-        $movies = Movie::all();
-        return view("media/movies/movies",    ["movies" => $movies]);
+        $movies = Movie::where('form', 'movie')->get();
+        $moviesSorted = $movies->sortDesc();
+        return view("media/movies/movies",    ["movies" => $moviesSorted]);
     }
 
     public function displaySingleMovie(Movie $movie){
@@ -17,8 +18,9 @@ class MoviesController extends Controller
     }
 
     public function displayAllSeries(){
-        $series = Movie::all();
-        return view("media/series/series",    ["series" => $series]);
+        $series = Movie::where('form', 'series')->get();
+        $seriesSorted = $series->sortDesc();
+        return view("media/series/series",    ["series" => $seriesSorted]);
     }
 
     public function displaySingleSerie(Movie $serie){
