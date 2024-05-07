@@ -12,8 +12,8 @@
         @if ($movie->form == "Movie")
         <a href="/archive/movies/{{$movie->id}}">
 
-            <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
-                <ul class="text-sm font-bold custom-text-shadow">{{$movie->title}} @if ($loop->first) ! Newest @endif </ul>
+            <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 shadow-md hover:opacity-50">
+                <ul class="text-sm font-bold custom-text-shadow">{{$movie->title}} @if ($loop->index <= 2) <span class="text-amber-200">Newest!</span> @endif </ul>
                 <ul class="custom-text-shadow">Watched in: {{$movie->year_watched}}</ul>
             </div>
         </a>
