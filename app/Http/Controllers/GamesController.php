@@ -16,4 +16,18 @@ class GamesController extends Controller
         // $games = Games::all();
         return view("media/games/single-game",    ["game" => $game]);
     }
+
+    public function displayCreate(){
+        return view("media.games.create-game");
+    }
+
+    public function createGame(){
+        Games::create([
+            'title' => request('title'),
+            'year_played' => request('year_played'),
+            'status' => request('status'),
+            'additional_info' => request('additional_info')
+        ]);
+        return redirect('/archive/games');
+    }
 }

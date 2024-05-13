@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot:heading>
         Games
-        <a href="/archive">
-            <button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button>
-            </a>
+            <a href="/archive"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
+            <a href="/archive/games/create"><button class=" text-white bg-red-400 hover:bg-red-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">create</button></a>
+
     </x-slot:heading>
     <h1>currently playing:</h1><br>
 
