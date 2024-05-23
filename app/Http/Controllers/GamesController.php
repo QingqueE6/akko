@@ -20,8 +20,8 @@ class GamesController extends Controller
         return view("media.games.create-game");
     }
 
-    public function displayEditGame($id){
-        $game = Games::find($id);
+    public function displayEditGame(Games $game){
+        // $game = Games::find($id);
         return view("media.games.edit-game", ['game' => $game]);
     }
 
@@ -35,12 +35,12 @@ class GamesController extends Controller
         return redirect('/archive/games');
     }
 
-    public function editSingleGame(Request $request, $id){
+    public function editSingleGame(Request $request, Games $game){
         $request->validate([
             'title' => ['required']
         ]);
 
-        $game = Games::findOrFail($id);
+        $game = Games::findOrFail($game->id);
 
         $game->update([
             'title' => request('title'),
@@ -54,7 +54,7 @@ class GamesController extends Controller
     }
 
     public function deleteSingleGame(Request $request, $id){
-        Games::findOrFail($id)->delete();
+        // Games::findOrFail($id)->delete();
         return redirect('/archive/games');
     }
 }
