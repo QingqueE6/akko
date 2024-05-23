@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:heading>
         Create: Game Entry
-        <a href="/archive"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
+        <a href="/archive/games"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
     </x-slot:heading>
 
 <form method="POST" action="/archive/games">
