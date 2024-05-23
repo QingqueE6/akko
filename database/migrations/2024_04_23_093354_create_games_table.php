@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignIdFor(\App\Models\Employer::class);
+            // $table->foreignIdFor(\App\Models\Employer::class);
             $table->string("title");
             $table->string("year_played")->nullable();
             $table->string("status")->nullable();

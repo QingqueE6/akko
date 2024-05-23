@@ -45,6 +45,10 @@ Route::get('/archive/games/create', [GamesController::class, "displayCreate"]);
 Route::post('/archive/games', [GamesController::class, "createGame"] );
 Route::get('/archive/games/{game}', [GamesController::class, "displaySingleGame"]);
 
+Route::get('/archive/games/{game}/edit', [GamesController::class, "displayEditGame"]);
+Route::patch('/archive/games/{game}', [GamesController::class, "editSingleGame"]);
+Route::delete('/archive/games/{game}', [GamesController::class, "deleteSingleGame"]);
+
 // Route::get('/about', function () {
 //     return view('about');
 // });

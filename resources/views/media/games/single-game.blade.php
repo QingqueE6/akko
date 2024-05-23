@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot:heading>
         Games
-        <a href="/archive">
-            <button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button>
-            </a>
+        <a href="/archive"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
+        <a href="/archive/games/{{$game->id}}/edit"><button class=" text-white bg-green-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">edit</button></a>
+            
     </x-slot:heading>
     <h1>{{$game->title}}</h1><br>
     @include("styling/divider")
