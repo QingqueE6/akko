@@ -53,8 +53,9 @@ class GamesController extends Controller
 
     }
 
-    public function deleteSingleGame(Request $request, $id){
-        // Games::findOrFail($id)->delete();
+    public function deleteSingleGame(Games $game){
+        // Authorization
+        $game->delete();
         return redirect('/archive/games');
     }
 }

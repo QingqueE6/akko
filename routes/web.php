@@ -6,7 +6,7 @@ use App\Http\Controllers\GamesController;
 use App\Http\Controllers\LatinController;
 use App\Http\Controllers\MoviesController;
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('home');
 Route::view('archive', 'archive');
 Route::view('/calories', 'calories');
 // Route::view('/about', 'about');
@@ -27,10 +27,16 @@ Route::get('/archive/series', [MoviesController::class, "displayAllSeries"]);
 Route::get('/archive/series/{serie}', [MoviesController::class, "displaySingleSerie"]);
 
 // Anime
-Route::get('/archive/anime', [AnimeController::class, "displayAll"]);
-Route::get('/archive/anime/create', [AnimeController::class, "displayCreate"]);
-Route::post('/archive/anime', [AnimeController::class, "createAnime"] );
-Route::get('/archive/anime/{anime}', [AnimeController::class, "displaySingleAnime"]);
+Route::controller(AnimeController::class)->group(function () {
+    Route::get('/archive/anime', "displayAll");
+    Route::get('/archive/anime/create', "displayCreate");
+    Route::post('/archive/anime', "createAnime");
+    Route::get('/archive/anime/{anime}', "displaySingleAnime");
+    Route::get('/archive/anime/{anime}/edit',  "displayEditAnime");
+    Route::patch('/archive/anime/{anime}',  "editSingleAnime");
+    Route::delete('/archive/anime/{anime}',  "deleteSingleAnime");
+});
+
 
 Route::controller(GamesController::class)->group(function (){
     Route::get('/archive/games',  "displayAll");

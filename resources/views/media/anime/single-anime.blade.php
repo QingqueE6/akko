@@ -2,7 +2,7 @@
     <x-slot:heading>
         Anime & Manga
         <a href="/archive/anime"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
-        <a href="/archive/anime/create"><button class=" text-white bg-red-400 hover:bg-red-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">create</button></a>
+        <a href="/archive/anime/{{$anime->id}}/edit"><button class=" text-white bg-green-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">edit</button></a>
     </x-slot:heading>
     <h1>{{$anime->title}}</h1><br>
     @include("styling/divider")

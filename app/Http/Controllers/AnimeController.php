@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Anime;
 use Illuminate\Http\Request;
 
@@ -26,14 +24,42 @@ class AnimeController extends Controller
         return view("media.anime.create-anime");
     }
 
+    public function displayEditAnime(Anime $anime){
+        return view("media.anime.edit-anime", ['anime' => $anime]);
+    }
+
     public function createAnime(){
         Anime::create([
             'title' => request('title'),
             'year_watched' => request('year_watched'),
+            'status' => request('status'),
             'form' => request('form'),
         ]);
         return redirect('/archive/anime');
     }
 
+    public function editSingleAnime(Request $request, Anime $anime){
+        $request->validate([
+            'title' => ['required'],
+            'year_watched' => ['required']
+        ]);
 
+        $anime = Anime::findOrFail($anime->id);
+
+        $anime->update([
+            'title' => request('title'),
+            'year_watched' => request('year_watched'),
+            'status' => request('status'),
+            'form' => request('form'),
+        ]);
+        
+        return redirect('/archive/anime/' . $anime->id);
+
+    }
+
+    public function deleteSingleAnime(Anime $anime){
+        // Authorization
+        $anime->delete();
+        return redirect('/archive/anime');
+    }
 }

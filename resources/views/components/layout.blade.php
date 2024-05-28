@@ -23,7 +23,7 @@
             <div class="flex h-16 items-center justify-between">
               <div class="flex items-center">
                 <div class="flex-shrink-0">
-                  <img class="h-16 w-16 hover:opacity-50" src="{{ asset("homeicon.jpg") }}" alt="Akko Media">
+                  <a href="{{route("home")}}"><img class="h-16 w-16 hover:opacity-50" src="{{ asset("homeicon.jpg") }}" alt="Home Icon"></a>
                 </div>
                 <div class="hidden md:block">
                   <div class="ml-10 flex items-baseline space-x-4">
