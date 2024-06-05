@@ -14,7 +14,7 @@
   
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4">
           <div class="sm:col-span-4">
-            <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
+            <x-label-form for="title">Title</x-label-form>
             <div class="mt-2">
               <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <input type="text" name="title" id="title" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" value="{{$game->title}}">
@@ -23,7 +23,7 @@
           </div>
 
           <div class="sm:col-span-4">
-            <label for="year_played" class="block text-sm font-medium leading-6 text-gray-900">year played</label>
+            <x-label-form for="year_played">year played</x-label-form>
             <div class="mt-2">
               <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <input type="text" name="year_played" id="year_played" autocomplete="2024" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" value="{{$game->year_played}}">
@@ -32,7 +32,7 @@
           </div>
 
           <div class="sm:col-span-4">
-            <label for="additional_info" class="block text-sm font-medium leading-6 text-gray-900">Additional Info</label>
+            <x-label-form for="additional_info">Additional Info</x-label-form>
             <div class="mt-2">
               <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <input type="text" name="additional_info" id="additional_info" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" value="{{$game->additional_info}}">
@@ -41,17 +41,17 @@
           </div>
 
           <div class="sm:col-span-1">
-            <label for="form" class="block text-sm font-medium  text-gray-900">Status</label>
+            <x-label-form for="form">Status</x-label-form>
             <div class="mt-2">
               <div class="rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <input type="radio" name="status" id="currently playing" value="currently playing" class="" @checked($game->status == "currently playing")>
-                <label for="currently playing">currently playing</label><br>
+                <x-label-form for="currently playing">currently playing</x-label-form><br>
                 <input type="radio" name="status" id="done" value="done" class="" @checked($game->status == "done")>
-                <label for="done">done</label><br>
+                <x-label-form for="done">done</x-label-form><br>
                 <input type="radio" name="status" id="Backlog" value="Backlog" class="" @checked($game->status == "Backlog")>
-                <label for="Backlog">Backlog</label><br>
+                <x-label-form for="Backlog">Backlog</x-label-form><br>
                 <input type="radio" name="status" id="completed" value="completed" class="" @checked($game->status == "completed")>
-                <label for="completed">completed</label><br>
+                <x-label-form for="completed">completed</x-label-form><br>
               </div>
             </div>
           </div>

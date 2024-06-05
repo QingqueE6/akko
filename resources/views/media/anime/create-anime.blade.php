@@ -7,8 +7,8 @@
     <!-- 
     - title
     - year_watched
-    form
-    status
+    - form
+    - status
     -->
 <form method="POST" action="/archive/anime">
   @csrf
@@ -19,39 +19,33 @@
   
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4">
           <div class="sm:col-span-4">
-            <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
+            <x-label-form for="title">Title</x-label-form>       
             <div class="mt-2">
-              <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input type="text" name="title" id="title" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Title of the anime/manga">
+                <x-input-form type="text" name="title" id="title" placeholder="Title of the anime/manga"/>
               </div>
-            </div>
-          </div>
+            </div>    
 
           <div class="sm:col-span-4">
-            <label for="year_watched" class="block text-sm font-medium leading-6 text-gray-900">year watched</label>
+            <x-label-form for="year_watched">year watched</x-label-form>
             <div class="mt-2">
-              <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input type="text" name="year_watched" id="year_watched" autocomplete="2024"   class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="2024">
+                <x-input-form type="text" name="year_watched" id="year_watched" autocomplete="2024" placeholder="2024"/>
               </div>
             </div>
-          </div>
 
           <div class="sm:col-span-4">
-            <label for="status" class="block text-sm font-medium leading-6 text-gray-900">Additional Info</label>
+            <x-label-form for="status">Additional Info</x-label-form>
             <div class="mt-2">
-              <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input type="text" name="status" id="status" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                <x-input-form type="text" name="status" id="status"/>
               </div>
             </div>
           </div>
 
           <div class="sm:col-span-1">
-            <label for="form" class="block text-sm font-medium  text-gray-900">Form</label>
+            <x-label-form for="form">Form</x-label-form>
             <div class="mt-2">
-              <div class="rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input type="radio" name="form" id="Anime" value="Anime" class="">
+                <input type="radio" name="form" id="Anime" value="Anime"/>
                 <label for="Anime">Anime</label><br>
-                <input type="radio" name="form" id="Manga" value="Manga" class="">
+                <input type="radio" name="form" id="Manga" value="Manga"/>
                 <label for="Manga">Manga</label><br>
               </div>
             </div>
