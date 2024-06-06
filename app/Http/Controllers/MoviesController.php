@@ -7,23 +7,64 @@ use Illuminate\Http\Request;
 
 class MoviesController extends Controller
 {
-    public function displayAllMovies(){
-        $movies = Movie::where('form', 'movie')->get();
+    public function displayAll(){        
+        $movies = Movie::where('form', 'Movie')->get();
         $moviesSorted = $movies->sortDesc();
-        return view("media/movies/movies",    ["movies" => $moviesSorted]);
+        $series = Movie::where('form', 'Series')->get();
+        $seriesSorted = $series->sortDesc();
+        return view("media/movies/movies", [
+                                            "movies" => $moviesSorted,
+                                            "series" => $seriesSorted
+    ]);
     }
 
     public function displaySingleMovie(Movie $movie){
         return view("media/movies/single-movie",    ["movie" => $movie]);
     }
 
-    public function displayAllSeries(){
-        $series = Movie::where('form', 'series')->get();
-        $seriesSorted = $series->sortDesc();
-        return view("media/series/series",    ["series" => $seriesSorted]);
+    public function displayCreate(){
+        return view("media.movies.create-movie");
     }
 
-    public function displaySingleSerie(Movie $serie){
-        return view("media/series/single-serie",    ["serie" => $serie]);
+    public function createMovie(Request $request){
+        $request->validate([
+            'title' => ['required'],
+            'year_watched' => ['required']
+        ]);
+
+        $movie = Movie::create([
+            'title' => request('title'),
+            'year_watched' => request('year_watched'),
+            'form' => request('form'),
+        ]);
+        return redirect('/archive/movies/' . $movie->id);
     }
+
+    public function displayEditMovie(Movie $movie){
+        return view("media.movies.edit-movie", ['movie' => $movie]);
+    }
+
+    public function editSingleMovie(Request $request, Movie $movie){
+        $request->validate([
+            'title' => ['required'],
+            'year_watched' => ['required']
+        ]);
+
+        $movie = Movie::findOrFail($movie->id);
+
+        $movie->update([
+            'title' => request('title'),
+            'year_watched' => request('year_watched'),
+            'form' => request('form'),
+        ]);
+        
+        return redirect('/archive/movies/' . $movie->id);
+    }
+
+    public function deleteSingleMovie(Movie $movie){
+        // Authorization inc
+        $movie->delete();
+        return redirect('/archive/movies');
+    }
+
 }

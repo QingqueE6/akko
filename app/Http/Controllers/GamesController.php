@@ -25,14 +25,18 @@ class GamesController extends Controller
         return view("media.games.edit-game", ['game' => $game]);
     }
 
-    public function createGame(){
-        Games::create([
+    public function createGame(Request $request){
+        $request->validate([
+            'title' => ['required']
+        ]);
+
+        $game = Games::create([
             'title' => request('title'),
             'year_played' => request('year_played'),
             'status' => request('status'),
             'additional_info' => request('additional_info')
         ]);
-        return redirect('/archive/games');
+        return redirect('/archive/games/' . $game->id);
     }
 
     public function editSingleGame(Request $request, Games $game){

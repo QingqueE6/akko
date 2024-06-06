@@ -28,14 +28,19 @@ class AnimeController extends Controller
         return view("media.anime.edit-anime", ['anime' => $anime]);
     }
 
-    public function createAnime(){
-        Anime::create([
+    public function createAnime(Request $request){
+        $request->validate([
+            'title' => ['required'],
+            'year_watched' => ['required']
+        ]);
+
+        $anime = Anime::create([
             'title' => request('title'),
             'year_watched' => request('year_watched'),
             'status' => request('status'),
             'form' => request('form'),
         ]);
-        return redirect('/archive/anime');
+        return redirect('/archive/anime/' . $anime->id);
     }
 
     public function editSingleAnime(Request $request, Anime $anime){
