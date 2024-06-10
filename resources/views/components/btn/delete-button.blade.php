@@ -1,0 +1,1 @@
+<button type="submit" form="delete-form" {{$attributes->merge(['class' => 'text-white bg-red-400 hover:bg-red-600 rounded-lg text-sm px-5 py-2.5 font-semibold'])}}>Delete</button>

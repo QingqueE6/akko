@@ -1,13 +1,10 @@
 <x-layout class="">
-
     <x-slot:heading>
         Movies & Series
-        <a href="/archive">
-            <button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button>
-            <a href="/archive/movies/create"><button class=" text-white bg-red-400 hover:bg-red-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">create</button></a>
-
-            </a>
+        <a href="/archive"><x-btn.back-button></x-btn.back-button></a>
+        <a href="/archive/movies/create"><x-btn.save-button>Create</x-btn.save-button></a>
     </x-slot:heading>
+    
     <h1>Movies:</h1><br>
       <div class="text-white grid grid-cols-4 mb-2">
         @foreach ($movies as $movie)

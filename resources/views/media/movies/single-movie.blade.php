@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:heading>
         Movies & Series
-        <a href="/archive/movies"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
-        <a href="/archive/movies/{{$movie->id}}/edit"><button class=" text-white bg-green-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">edit</button></a>
+        <a href="/archive/movies"><x-btn.back-button></x-btn.back-button></a>
+        <a href="/archive/movies/{{$movie->id}}/edit"><x-btn.save-button>Edit</x-btn.save-button></a>
     </x-slot:heading>
 
     <div class="allcontent">

@@ -9,7 +9,8 @@ class GamesController extends Controller
 {
     public function displayAll(){
         $games = Games::all();
-        return view("media/games/games",    ["games" => $games ]);
+        $gamesSorted = $games->sortDesc();
+        return view("media/games/games",    ["games" => $gamesSorted ]);
     }
 
     public function displaySingleGame(Games $game){

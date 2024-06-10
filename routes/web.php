@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\HomefeedController;
 use App\Http\Controllers\LatinController;
 use App\Http\Controllers\MoviesController;
 
-Route::view('/', 'welcome')->name('home');
+
 Route::view('archive', 'archive');
 Route::view('/calories', 'calories');
 // Route::view('/about', 'about');
@@ -16,6 +17,10 @@ Route::view('/calories', 'calories');
 // the {serie} could be anything so that includes /series/serie, hence collision
 
 Route::get('/latin', [LatinController::class, "displayAll"]);
+
+Route::controller(HomefeedController::class)->group(function () {
+    Route::get("/", "displayAllContent")->name('home');
+});
 
 Route::controller(AnimeController::class)->group(function () {
     Route::get('/archive/anime', "displayAll");

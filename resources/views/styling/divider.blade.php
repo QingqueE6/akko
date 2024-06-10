@@ -1,1 +1,1 @@
-<hr class="m-4 border-gray-500">
+<hr class="m-5 border-gray-500">

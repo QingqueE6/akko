@@ -14,7 +14,7 @@
       @if ($game->status == "currently playing")
       <a href="/archive/games/{{$game->id}}">
           <div class="m-1 pl-1 bg-gradient-to-r from-sky-200 to-indigo-200 hover:opacity-50 shadow-md">
-              <ul class="font-bold custom-text-shadow">{{$game->title}}</ul>
+              <ul class="font-bold custom-text-shadow">{{$game->title}} @if ($loop->index <= 2) <span class="text-amber-200">Newest!</span> @endif</ul>
           </div>
         </a>
       @endif

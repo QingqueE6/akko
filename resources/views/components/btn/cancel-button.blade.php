@@ -1,0 +1,1 @@
+<button type="button" {{$attributes->merge(['class' => 'text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600'])}}>Cancel</button>
