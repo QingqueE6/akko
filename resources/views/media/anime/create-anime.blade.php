@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:heading>
         Create: Anime & Manga
-        <a href="/archive/anime"><button class=" text-white bg-blue-400 hover:bg-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">go back</button></a>
+        <a href="/archive/anime"><x-btn.back-button></x-btn.back-button></a>
     </x-slot:heading>
 
 <form method="POST" action="/archive/anime">
@@ -30,7 +30,7 @@
                 <x-input-form type="text" name="status" id="status"/>
             </div>
 
-          <div class="sm:col-span-1">
+          <div class="sm:col-span-4">
             <x-label-form for="form">Form</x-label-form>
             <div class="rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset  sm:max-w-md">
                 <input type="radio" name="form" id="Anime" value="Anime"/>
@@ -44,8 +44,8 @@
         </div>
   
     <div class="mt-6 flex items-center justify-end gap-x-6">
-      <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-      <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+      <a href="/archive/anime"><x-btn.cancel-button></x-btn.cancel-button></a>
+      <x-btn.save-button>Create</x-btn.save-button>
     </div>
   </form>
 </x-layout>

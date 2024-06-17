@@ -14,11 +14,8 @@
           <div class="bg-white m-1 pl-1 pt-1 pb-1 shadow-md">
               <ul class="">year watched: {{$movie->year_watched}}</ul>
               <ul class="">Form: {{$movie->form}}</ul>
-              {{-- To be added as a migration still --}}
-              {{-- <ul class="">Additional Info: {{$anime->additional_info}}</ul> --}}
           </div>
     </div> 
     </div>
   @include("styling/divider")
-
 </x-layout>

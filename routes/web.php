@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\GamesController;
@@ -7,9 +6,8 @@ use App\Http\Controllers\HomefeedController;
 use App\Http\Controllers\LatinController;
 use App\Http\Controllers\MoviesController;
 
-
 Route::view('archive', 'archive');
-Route::view('/calories', 'calories');
+Route::view('/test', 'test');
 // Route::view('/about', 'about');
 
 // Wildcard routes should generally be at the bottom to prevent

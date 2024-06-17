@@ -24,7 +24,7 @@
                     <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                     <x-nav-link href="/archive" :active="request()->is('archive')">Media Archive</x-nav-link>
                     <x-nav-link href="/latin" :active="request()->is('latin')">Latin</x-nav-link>
-                    <x-nav-link href="/calories" :active="request()->is('calories')">Calorie Counter</x-nav-link>
+                    <x-nav-link href="/test" :active="request()->is('test')">test</x-nav-link>
                   </div>
                 </div>
               </div>
@@ -44,7 +44,7 @@
               <a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
               <a href="/archive" class="text-gray-300 hover:bg-gray-900 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Media Archive</a>
               <a href="/latin" class="text-gray-300 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Latin</a>
-              <a href="/calories" class="text-gray-300 hover:bg-gray-900 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calorie Counter</a>
+              <a href="/test" class="text-gray-300 hover:bg-gray-900 hover:text-white block rounded-md px-3 py-2 text-base font-medium">test</a>
             </div>
           </div>
         </nav>
