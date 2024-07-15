@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:heading>
         Anime & Manga
-        <a href="/archive/movies"><x-btn.back-button></x-btn.back-button></a>
-        <a href="/archive/movies/{{$anime->id}}/edit"><x-btn.save-button>Edit</x-btn.save-button></a>
+        <a href="/archive/anime"><x-btn.back-button></x-btn.back-button></a>
+        <a href="/archive/anime/{{$anime->id}}/edit"><x-btn.save-button>Edit</x-btn.save-button></a>
     </x-slot:heading>
 
         <div class="allcontent">

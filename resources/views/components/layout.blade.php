@@ -30,7 +30,13 @@
               </div>
 
 
-                  <div class="relative ml-3">
+                  <div class="relative ml-3 space-x-2">
+                    @guest
+                    <x-nav-link-alt href="/register" :active="request()->is('register')">Register</x-nav-link>
+                      <x-nav-link-alt href="/login" :active="request()->is('login')">Login</x-nav-link>
+                    @endguest
+
+
                   </div>
               <div class="-mr-2 flex md:hidden">
                 <!-- Mobile menu button -->
