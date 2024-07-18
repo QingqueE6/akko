@@ -29,9 +29,9 @@
           </div>
 
           <div class="sm:col-span-4">
-            <x-label-form for="password-confirm">Confirm Password</x-label-form>
-                <x-input-form type="text" name="password-confirm" id="password-confirm" placeholder="******" required />
-                <x-input-error name="password-confirm"/>
+             <x-label-form for="password_confirmation">Confirm Password</x-label-form>
+                <x-input-form type="password" name="password_confirmation" id="password_confirmation" placeholder="******" required />
+                <x-input-error name="password_confirmation"/>
             </div>
 
       </div>

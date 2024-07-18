@@ -32,9 +32,16 @@
 
                   <div class="relative ml-3 space-x-2">
                     @guest
-                    <x-nav-link-alt href="/register" :active="request()->is('register')">Register</x-nav-link>
+                      <x-nav-link-alt href="/register" :active="request()->is('register')">Register</x-nav-link>
                       <x-nav-link-alt href="/login" :active="request()->is('login')">Login</x-nav-link>
                     @endguest
+
+                    @auth
+                      <form method="POST" action="/logout">
+                        @csrf
+                        <x-btn.save-button>Logout</x-btn.save-button>
+                      </form>
+                    @endauth
 
 
                   </div>

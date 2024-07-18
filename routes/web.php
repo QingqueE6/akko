@@ -26,6 +26,9 @@ Route::controller(UserController::class)->group(function () {
     Route::post("/register", "createUser");
     Route::get("/login", "displayLogin");
     Route::post("/login", "createLogin");
+    Route::post("/logout", "logoutUser");
+
+
 });
 
 Route::controller(AnimeController::class)->group(function () {

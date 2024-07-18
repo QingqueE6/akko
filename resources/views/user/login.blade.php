@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-      Register
+      Login
       <a href="/archive/anime"><x-btn.back-button></x-btn.back-button></a>
     </x-slot:heading>
   
@@ -12,7 +12,7 @@
   
           <div class="sm:col-span-4">
             <x-label-form for="name">Username</x-label-form>       
-                <x-input-form type="text" name="name" id="name" placeholder="your preferred username" required />
+                <x-input-form type="text" name="name" id="name" placeholder="your preferred username" :value="old('name') " required />
                 <x-input-error name="name"/>
             </div>    
   
