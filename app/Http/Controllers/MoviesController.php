@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewEntryMovie;
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MoviesController extends Controller
 {
@@ -37,6 +39,9 @@ class MoviesController extends Controller
             'year_watched' => request('year_watched'),
             'form' => request('form'),
         ]);
+
+        Mail::to("qingquestatus@outlook.com")->send(new NewEntryMovie($movie));
+
         return redirect('/archive/movies/' . $movie->id);
     }
 

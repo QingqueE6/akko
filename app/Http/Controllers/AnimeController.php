@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
+use App\Mail\NewEntryAnime;
 use App\Models\Anime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AnimeController extends Controller
 {
@@ -40,6 +42,9 @@ class AnimeController extends Controller
             'status' => request('status'),
             'form' => request('form'),
         ]);
+
+        Mail::to("qingquestatus@outlook.com")->send(new NewEntryAnime($anime));
+
         return redirect('/archive/anime/' . $anime->id);
     }
 

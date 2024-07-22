@@ -21,7 +21,7 @@
             </div>
 
           <div class="sm:col-span-4">
-            <x-label-form for="year_watched">year watched</x-label-form>       
+            <x-label-form for="year_watched">year watched/read</x-label-form>       
                 <x-input-form type="text" name="year_watched" id="year_watched" autocomplete="2024" value="{{$anime->year_watched}}"/>
                   <x-input-error name="year_watched"/>
             </div>

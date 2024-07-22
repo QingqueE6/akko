@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\GamesController;
@@ -6,6 +7,7 @@ use App\Http\Controllers\HomefeedController;
 use App\Http\Controllers\LatinController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\UserController;
+use App\Mail\NewEntry;
 
 Route::view('archive', 'archive');
 Route::view('/test', 'test');
@@ -27,8 +29,6 @@ Route::controller(UserController::class)->group(function () {
     Route::get("/login", "displayLogin");
     Route::post("/login", "createLogin");
     Route::post("/logout", "logoutUser");
-
-
 });
 
 Route::controller(AnimeController::class)->group(function () {

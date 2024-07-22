@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Mail\NewEntryGame;
 use App\Models\Games;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class GamesController extends Controller
 {
@@ -37,6 +40,9 @@ class GamesController extends Controller
             'status' => request('status'),
             'additional_info' => request('additional_info')
         ]);
+
+        Mail::to("qingquestatus@outlook.com")->send(new NewEntryGame($game));
+
         return redirect('/archive/games/' . $game->id);
     }
 
