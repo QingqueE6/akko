@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:heading>
         Games
-        <a href="/archive/movies"><x-btn.back-button></x-btn.back-button></a>
-        <a href="/archive/movies/{{$game->id}}/edit"><x-btn.save-button>Edit</x-btn.save-button></a>
+        <a href="/archive/games"><x-btn.back-button></x-btn.back-button></a>
+        <a href="/archive/games/{{$game->id}}/edit"><x-btn.save-button>Edit</x-btn.save-button></a>
     </x-slot:heading>
 
       <div class="allcontent">
