@@ -43,7 +43,7 @@ class AnimeController extends Controller
             'form' => request('form'),
         ]);
 
-        Mail::to("qingquestatus@outlook.com")->send(new NewEntryAnime($anime));
+        Mail::to("qingquestatus@outlook.com")->queue(new NewEntryAnime($anime));
 
         return redirect('/archive/anime/' . $anime->id);
     }

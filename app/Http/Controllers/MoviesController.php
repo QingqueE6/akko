@@ -40,7 +40,7 @@ class MoviesController extends Controller
             'form' => request('form'),
         ]);
 
-        Mail::to("qingquestatus@outlook.com")->send(new NewEntryMovie($movie));
+        Mail::to("qingquestatus@outlook.com")->queue(new NewEntryMovie($movie));
 
         return redirect('/archive/movies/' . $movie->id);
     }

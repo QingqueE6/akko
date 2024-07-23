@@ -41,7 +41,7 @@ class GamesController extends Controller
             'additional_info' => request('additional_info')
         ]);
 
-        Mail::to("qingquestatus@outlook.com")->send(new NewEntryGame($game));
+        Mail::to("qingquestatus@outlook.com")->queue(new NewEntryGame($game));
 
         return redirect('/archive/games/' . $game->id);
     }
